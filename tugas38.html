@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Belajar Javascript - NIOMIC</title>
+    <style media="screen">
+      .contohstyle {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" onclick="tombol()" name="button">Jalankan</button>
+    <br />
+    <br />
+    <hr />
+    Atribut <b>removeNamedItem()</b> : <br />
+    <input value="Inputan" /> <br />
+    <hr />
+    Atribut <b>setNamedItem()</b> : <br />
+    <i>contoh</i>
+    <hr />
+    Atribut <b>value()</b> :
+    <p id="satu">contoh</p>
+    <hr />
+    <script>
+      const tombol = () => {
+        const value1 = document.querySelector("input").attributes;
+        value1.removeNamedItem("value");
+
+        const value2 = document.getElementsByTagName("i")[0].attributes;
+        const node = document.createAttribute("style");
+        node.value = "color:red;";
+        value2.setNamedItem(node);
+
+        const value3 = document.getElementsByTagName("button")[0].attributes[0];
+
+        document.getElementById("satu").innerHTML = value3.value;
+      };
+    </script>
+  </body>
+</html>
